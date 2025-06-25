@@ -16,4 +16,4 @@ It's a complete redesign and performance upgrade over the previous React 17 (CRA
 - Gitea + JIRA-based project experiences
 - Integrated Resume + Contact options
 
-➡️ [Live Demo]()
+➡️ [Live Demo](https://portfolio-v2-ruddy-zeta.vercel.app/)
