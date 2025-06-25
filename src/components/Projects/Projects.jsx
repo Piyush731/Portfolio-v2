@@ -14,6 +14,14 @@ import {
 } from "react-icons/fa";
 import Particle from "../Particle";
 import collabImage from "../../assets/Projects/Collabspacehome.png"
+import ATSimg from "../../assets/Projects/Careercrafthome.png"
+import Ecommerce from "../../assets/Projects/Ecommerce.png"
+import ERP from "../../assets/Projects/ERP.png"
+import Garageimg from "../../assets/Projects/Garage.png"
+import Portfolioimg from "../../assets/Projects/Portfoliov2.png"
+import TictactoeImg from "../../assets/Projects/tictac.png"
+
+
 import ProjectModal from "./ProjectModal";
 
 const Projects = () => {
@@ -39,7 +47,7 @@ const Projects = () => {
     {
       id: 2,
       title: "CareerCraft",
-      image: collabImage,
+      image: ATSimg,
       description: "An ATS (Applicant Tracking System) Optimized Resume Analyzer that provides insights into resume compatibility with job descriptions. This innovative system empowers job seekers by providing valuable insights into their resumes' compatibility with job descriptions, identifying missing keywords, and offering tailored profile summaries.",
       technologies: ["Python", "Gemini API", "React", "Node.js", "MongoDB"],
       ghLink: "https://github.com/Piyush731/ATS-optimized-resume-analyzer-using-gemini-model/",
@@ -57,7 +65,7 @@ const Projects = () => {
     {
       id: 3,
       title: "Portfolio",
-      image: collabImage,
+      image: Portfolioimg ,
       description: "My personal portfolio showcasing projects, skills, and experience as a software developer. Built with React.js, Node.js, and Express.js, and styled with CSS3, it reflects my commitment and expertise in crafting innovative web solutions.",
       technologies: ["React", "Node.js", "Express.js", "CSS3", "Framer Motion"],
       ghLink: "https://github.com/Piyush731/Portfolio",
@@ -75,7 +83,7 @@ const Projects = () => {
     {
       id: 4,
       title: "ERP Management System",
-      image: collabImage,
+      image: ERP ,
       description: "Enterprise resource planning system for managing student and faculty records with role-based access control, attendance tracking, and grade management.",
       technologies: ["Java", "Spring Boot", "MySQL", "React", "REST API", "JWT"],
       ghLink: "https://github.com/Piyush731/ERP-Management-System",
@@ -93,7 +101,7 @@ const Projects = () => {
     {
       id: 5,
       title: "Tic-Tac-Toe",
-      image: collabImage,
+      image: TictactoeImg ,
       description: "Classic implementation of the popular two-player game with AI opponent using minimax algorithm and difficulty levels.",
       technologies: ["Python", "Pygame", "AI Algorithms", "Minimax"],
       ghLink: "https://github.com/Piyush731/tic-tac-toe",
@@ -111,7 +119,7 @@ const Projects = () => {
     {
       id: 6,
       title: "E-Commerce Store",
-      image: collabImage,
+      image: Ecommerce ,
       description: "Full-featured online shopping platform with product listings, cart functionality, payment processing, and order management.",
       technologies: ["JavaScript", "React", "Node.js", "MongoDB", "Stripe API"],
       ghLink: "https://github.com/Piyush731/Ecommerce-Store",
@@ -129,7 +137,7 @@ const Projects = () => {
     {
       id: 7,
       title: "Garage Management System",
-      image: collabImage,
+      image: Garageimg ,
       description: "Comprehensive solution for automotive repair facilities built on Salesforce Platform with customer management, service tracking, and inventory control.",
       technologies: ["Salesforce", "Apex", "Visualforce", "SOQL", "Lightning"],
       ghLink: "https://github.com/Piyush731/Garage-management-system",
@@ -376,13 +384,14 @@ const Projects = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setSelectedProject(project)}
                 >
-                  <div className="h-48 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 flex items-center justify-center">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-xl w-4/5 h-4/5 flex items-center justify-center">
-                      <span className="text-gray-500 text-lg">
-                        {project.image}
-                        </span>
-                    </div>
-                  </div>
+                  <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 overflow-hidden rounded-t-2xl">
+                  <img 
+                  src={project.image} 
+                 alt={project.title} 
+                 className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="text-xl font-bold text-white">{project.title}</h3>
