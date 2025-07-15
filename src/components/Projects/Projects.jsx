@@ -161,6 +161,10 @@ const Projects = () => {
  const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const isProgrammaticScroll = useRef(false);
+  const [scrollX, setScrollX] = useState(0);
+
+
 
  const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -208,14 +212,20 @@ const Projects = () => {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (timelineRef.current) {
-        const scrollPos = timelineRef.current.scrollLeft;
-        const containerWidth = timelineRef.current.clientWidth;
-        const newIndex = Math.round(scrollPos / containerWidth);
-        setCurrentIndex(newIndex);
-      }
-    };
+ const handleScroll = () => {
+  if (timelineRef.current) {
+    const scrollPos = timelineRef.current.scrollLeft;
+    setScrollX(scrollPos);
+
+    if (!isProgrammaticScroll.current) {
+      const containerWidth = timelineRef.current.clientWidth;
+      const newIndex = Math.round(scrollPos / containerWidth);
+      setCurrentIndex(newIndex);
+    }
+  }
+};
+
+
 
     if (timelineRef.current) {
       timelineRef.current.addEventListener("scroll", handleScroll);
@@ -235,18 +245,26 @@ const Projects = () => {
     }
   }, [filter]);
 
-   const scrollToProject = (index) => {
-    if (timelineRef.current) {
-      const containerWidth = timelineRef.current.clientWidth;
-      const projectWidth = containerWidth / 3; // Each project takes 1/3 of container
-      
+  const scrollToProject = (index) => {
+  if (timelineRef.current) {
+    const projectCard = timelineRef.current.querySelectorAll("div.snap-center")[index];
+    if (projectCard) {
+      isProgrammaticScroll.current = true; // prevent scroll event from messing index
       timelineRef.current.scrollTo({
-        left: index * projectWidth,
+        left: projectCard.offsetLeft - timelineRef.current.offsetLeft,
         behavior: "smooth"
       });
       setCurrentIndex(index);
+
+
+      setTimeout(() => {
+        isProgrammaticScroll.current = false;
+      }, 400); 
     }
-  };
+  }
+};
+
+
 
 
   const nextProject = () => {

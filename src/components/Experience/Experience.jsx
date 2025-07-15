@@ -27,7 +27,7 @@ const Experience = () => {
       description: [
         "Focus on Programming Languages, Data Structures, Algorithms, and Software Engineering",
         "Studied Full Stack Web Development, Database Management, and System Security",
-        "Current CGPA: 8.5/10",
+        "Current CGPA: 7.9/10",
         "Relevant Coursework: Object-Oriented Programming, Database Management Systems, Computer Networks, Operating Systems, Software Engineering"
       ],
       skills: [
@@ -38,13 +38,13 @@ const Experience = () => {
       icon: <FaGraduationCap className="text-xl text-purple-500" />,
       logo: "gehu.jpg",
       achievements: [
-        "Awarded academic excellence scholarship for maintaining top 10% in the program",
+        "Awarded academic excellence scholarship for maintaining CGPA criteria in the program",
         "Developed multiple full-stack applications as part of academic curriculum",
-        "Participated in national-level coding competitions"
+        "Participated in 24hrs coding competitions"
       ],
       projects: [
-        "ERP Management System: Java-based solution for university administration",
-        "CareerCraft: ATS-optimized resume analyzer using Gemini AI",
+        "ERP Management System",
+        "CareerCraft: ATS-optimized resume analyzer",
         "Portfolio Website: Showcasing skills and projects"
       ],
       impact: "Developed strong foundation in computer science principles and practical software development skills."
@@ -75,10 +75,7 @@ const Experience = () => {
     "Successfully deployed working components with field-level security"
   ],
   projects: [
-    "Garage Management System: Custom object-based automotive service tracker",
-    "Sales Automation: Lead and opportunity tracking with process flows",
-    "Customer Portal: Lightning interface for service request management"
-  ],
+    "Garage Management System: Custom object-based automotive service tracker"  ],
   impact: "Gained hands-on experience with Salesforce CRM, automation, and cloud-based enterprise systems."
 },
 {
